@@ -1,0 +1,23 @@
+<html>
+
+<head>
+
+    <title>
+
+        {% block title %} {% endblock %}
+
+    </title>
+
+</head>
+
+<body>
+    <h2 style="background-color:rgb(8, 6, 49);color:white;text-align:center">VIDA AL HILO</h1>
+    {% include "installed_apps/BarraNavegacion.html"%}
+    {% block content %}
+    
+    {% endblock %}
+
+    
+</body>
+
+</html>
