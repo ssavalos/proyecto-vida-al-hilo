@@ -2,10 +2,10 @@
 
 <head>
 
-    {%load static%}
+    {% load static %}
 
     <!-- Bootstrap -->
-    <link href="{%static 'installed_apps/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'installed_apps/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
      <!-- Fonts -->
     
@@ -14,7 +14,7 @@
      
 
     <!-- Styles -->
-    <link href="{%static 'installed_apps/css/gestion.css'%}" rel="stylesheet">
+    <link href="{% static 'installed_apps/css/gestion.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -35,10 +35,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="home">Inicio</a>
+            <a class="nav-link text-uppercase text-expanded" href="">Inicio</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="servicios.html">Servicios</a>
+            <a class="nav-link text-uppercase text-expanded" href="servicios.html">Tutoriales</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="tienda.html">Tienda</a>
@@ -47,7 +47,7 @@
             <a class="nav-link text-uppercase text-expanded" href="contacto">Contacto</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="blog.html">Blog</a>
+            <a class="nav-link text-uppercase text-expanded" href="blog.html">Login</a>
           </li>
          
         </ul>
@@ -60,13 +60,13 @@
    <section class="page-section clearfix">
     <div class="container">
       <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{%static 'installed_apps/img/jeanss.jpg'%}" alt="">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'installed_apps/img/principal.jpg' %}" alt="">
         <div class="intro-text left-0 text-center bg-faded p-5 rounded">
           <h2 class="section-heading mb-4" >
-            <span class="section-heading-upper">Puntualidad</span>
-            <span class="section-heading-lower">El mejor stock</span>
+            <span class="section-heading-upper"></span>
+            <span class="section-heading-lower">Salvemos el mundo</span>
           </h2>
-          <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
+          <p class="mb-3">Página diseñada para la venta y compra de ropa, donde adicionalmente les brindamos material de apoyo para cuidar tu ropa correctamente, así como modificarla a tu gusto!
           </p>
          
         </div>
@@ -84,9 +84,9 @@
             <div class="cta-inner text-center rounded">
               <h2 class="section-heading mb-4">
                 <span class="section-heading-upper">Compromiso total</span>
-                <span class="section-heading-lower">Garantizado</span>
+                <span class="section-heading-lower">Con puntos de encuentro</span>
               </h2>
-              <p class="mb-0">Con más de 75 años de experiencia a nuestras espaldas, desde Gestión de Pedidos tenemos los conocimientos y herramientas necesarios para llevar cualquier objeto a la puerta de su casa con puntualidad y profesionalidad.</p>
+              <p class="mb-0">Garantizamos una muy buena experiencia en nuestra página web, donde puedes echar a volar la imaginación</p>
             </div>
           </div>
         </div>
@@ -122,13 +122,13 @@
         	<a href="sample.html" class="link">Aviso legal</a> ·
         	<a href="sample.html" class="link">Cookies</a>
 		</p>
-        <p class="m-0 mbt1">&copy; Vida al Hilo 2023</p>
+        <p class="m-0 mbt1">&copy; Vida al hilo 2023</p>
       </div>
 	</footer>
 
     <!-- Bootstrap -->
-    <script src="{%static 'installed_apps/vendor/jquery/jquery.min.js'%}"></script>
-    <script src="{%static 'installed_apps/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'installed_apps/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'installed_apps/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
 
