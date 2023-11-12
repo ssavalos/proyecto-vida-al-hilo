@@ -6,4 +6,5 @@ urlpatterns = [
     path('videos/',views.Videos_Pagina),
     path('buscador/',views.Buscador),
     path('contacto/',views.Contacto),
+    path('login/',views.Login),
 ]
