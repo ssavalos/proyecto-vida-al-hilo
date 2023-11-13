@@ -99,6 +99,7 @@ margin-right: 3px;
   letter-spacing: 1px;
 }
 
+
 .wrapper .register-link {
   font-size: 14.5px;
   text-align: center;
@@ -109,6 +110,14 @@ margin-right: 3px;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
+}
+
+.boton-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
 }
 
 .register-link p a:hover {

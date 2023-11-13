@@ -30,5 +30,10 @@ def registrarse(request):
     return render(request, 'installed_apps/registrarse.html')
 def homekaty(request):
     return render(request, 'installed_apps/homekaty.html')
+def comofuncionamos(request):
+    return render(request, 'installed_apps/comofuncionamos.html')
+def tutoriales(request):
+    return render(request, 'installed_apps/tutoriales.html')
+
 
     
