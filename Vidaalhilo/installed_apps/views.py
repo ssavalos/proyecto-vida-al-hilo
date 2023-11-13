@@ -26,10 +26,9 @@ def Contacto(request):
     return render(request, 'installed_apps/Contacto.html')
 def Login(request):
     return render(request, 'installed_apps/Login.html')
-def Buscador2(request):
-    return render(request, 'installed_apps/barradenavegacion.html')
 def registrarse(request):
     return render(request, 'installed_apps/registrarse.html')
-
+def homekaty(request):
+    return render(request, 'installed_apps/homekaty.html')
 
     
