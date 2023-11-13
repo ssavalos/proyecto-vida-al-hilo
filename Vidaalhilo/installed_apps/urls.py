@@ -7,4 +7,7 @@ urlpatterns = [
     path('buscador/',views.Buscador),
     path('contacto/',views.Contacto),
     path('login/',views.Login),
+    path('barradenavegacion/',views.Buscador2),
+    path('registrarse/',views.registrarse)
+
 ]

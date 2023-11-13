@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 
+
 def General_Pagina(request):
     return render(request, 'installed_apps/Home.html')
 def Videos_Pagina(request):
@@ -25,3 +26,10 @@ def Contacto(request):
     return render(request, 'installed_apps/Contacto.html')
 def Login(request):
     return render(request, 'installed_apps/Login.html')
+def Buscador2(request):
+    return render(request, 'installed_apps/barradenavegacion.html')
+def registrarse(request):
+    return render(request, 'installed_apps/registrarse.html')
+
+
+    
