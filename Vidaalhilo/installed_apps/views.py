@@ -34,6 +34,8 @@ def comofuncionamos(request):
     return render(request, 'installed_apps/comofuncionamos.html')
 def tutoriales(request):
     return render(request, 'installed_apps/tutoriales.html')
-
-
+def olvidastelacontraseña(request):
+    return render(request, 'installed_apps/olvidastelacontraseña.html')
+def perfil(request):
+    return render(request, 'installed_apps/perfil.html')
     

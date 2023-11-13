@@ -115,9 +115,10 @@ margin-right: 3px;
 .boton-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007BFF;
-  color: #fff;
+  background-color: #f5f6f8;
+  color: #070707;
   text-decoration: none;
+  text-align: center
 }
 
 .register-link p a:hover {

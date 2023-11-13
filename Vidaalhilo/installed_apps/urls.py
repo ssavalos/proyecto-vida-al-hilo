@@ -10,6 +10,8 @@ urlpatterns = [
     path('registrarse/',views.registrarse),
     path('homekaty/',views.homekaty),
     path('comofuncionamos/',views.comofuncionamos),
-    path('tutoriales/',views.tutoriales)
+    path('tutoriales/',views.tutoriales),
+    path('olvidastelacontraseña/',views.olvidastelacontraseña),
+    path('perfil/',views.perfil)
 
 ]
