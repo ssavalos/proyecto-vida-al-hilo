@@ -46,6 +46,9 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+LOGIN_REDIRECT_URL = "/homekaty"
+LOGOUT_REDIRECT_URL = "/"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -83,7 +86,7 @@ WSGI_APPLICATION = 'Vidaalhilo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'base_vidaalhilo',
         'USER': 'postgres',
         'PASSWORD': 'cata987',
         'HOST': 'localhost',
