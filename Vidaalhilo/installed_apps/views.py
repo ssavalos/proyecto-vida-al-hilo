@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
+from .models import User
 
+def ver_perfil(request, usuario_id):
+    usuario = User.objects.get(id=usuario_id)  # Recupera el usuario desde la base de datos
+    return render(request, 'perfil.html', {'user': usuario})  # Renderiza la plantilla con los datos del usuario
 
 def General_Pagina(request):
     return render(request, 'installed_apps/Home.html')
