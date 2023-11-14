@@ -7,7 +7,11 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .form import RegisterForm
 import io
+from django.db.models import User
 
+def ver_perfil(request, usuario_id):
+    usuario = User.objects.get(id=usuario_id)  # Recupera el usuario desde la base de datos
+    return render(request, 'perfil.html', {'user': usuario})  # Renderiza la plantilla con los datos del usuario
 
 def General_Pagina(request):
     return render(request, "installed_apps/Home.html")
