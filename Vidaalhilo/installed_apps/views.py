@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .form import RegisterForm
 import io
-from django.db.models import User
+from .form import User
 
 def ver_perfil(request, usuario_id):
     usuario = User.objects.get(id=usuario_id)  # Recupera el usuario desde la base de datos
