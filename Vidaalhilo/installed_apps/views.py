@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 from installed_apps.catalogo.helpers import concatenar_imagenes
-
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .form import RegisterForm
@@ -42,6 +41,7 @@ def Contacto(request):
 
         return render(request, "installed_apps/Gracias.html")
     return render(request, "installed_apps/Contacto.html")
+
 def registrarse(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
