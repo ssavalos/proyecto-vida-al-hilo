@@ -16,5 +16,5 @@ urlpatterns = [
     path('tutoriales/',views.tutoriales),
     path('olvidastelacontraseña/',views.olvidastelacontraseña),
     path('perfil/',views.perfil),
-
+    path('concatenar/', views.concatenar_fotos, name='concatenar_fotos'),
 ]
