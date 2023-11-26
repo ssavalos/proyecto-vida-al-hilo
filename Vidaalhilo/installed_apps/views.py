@@ -25,3 +25,5 @@ def Contacto(request):
     return render(request, 'installed_apps/Contacto.html')
 def Login(request):
     return render(request, 'installed_apps/Login.html')
+def Home_principal(request):
+    return render(request, 'installed_apps/Home_principal.html')
