@@ -16,7 +16,8 @@ body {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos horizontalmente */
     align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
-    padding: 10px 20px; /* Ajusta el espacio interno de la barra de navegación */
+    padding: 5px 5px; /* Ajusta el espacio interno de la barra de navegación */
+    margin-bottom: 10px;
 }
 
 #navbarDropdown {
@@ -46,8 +47,32 @@ body {
 }
 
 #logo {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 35px;
+    font-weight: 900;
     color: white;
     font-family: 'Raleway';
+}
+
+#inicio {
+    color: white;
+    font-family: 'Raleway';
+    margin-top: 17px;
+}
+
+#tutoriales {
+    color: white;
+    font-family: 'Raleway';
+    margin-top: 17px;
+}
+
+#comofuncionamos {
+    color: white;
+    font-family: 'Raleway';
+    margin-top: 17px;
+}
+
+#perfil {
+    color: white;
+    font-size: 35px;
+    margin-top: 5px;
 }
