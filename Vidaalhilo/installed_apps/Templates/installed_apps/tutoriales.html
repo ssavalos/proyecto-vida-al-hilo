@@ -1,5 +1,5 @@
 {% extends "installed_apps/plantilla padre.html" %}
-{% block title %} tutoriales {% endblock %}
+{% block title %} Tutoriales {% endblock %}
 {% block content %}
 
 <!DOCTYPE html>
@@ -7,13 +7,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="../installed_apps/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+ 
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
     <title>Lista de Reproducción de Tutoriales</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff; /* blanco */
+            color: #000; /* negro para el texto principal */
+        }
+        h1 {
+            color: rgb(102, 0, 102); /* púrpura oscuro */
+            font-family: 'Raleway';
+            font-weight: 400;
+        }
+        #playlist {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        footer {
+            background-color: #f0f0f0; /* gris claro */
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
     <!-- Agrega la siguiente línea para cargar la API de YouTube -->
     <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
 
-    <h1>Tutoriales</h1>
+    <header>
+        <h1>Tutoriales para cuidar y remodelar tu ropa</h1>
+        <p>Descubre consejos y técnicas para mantener tu ropa en buen estado y contribuir a un estilo de vida más sostenible.</p>
+    </header>
 
     <div id="playlist"></div>
 
@@ -28,7 +61,7 @@
                 height: '315',
                 width: '560',
                 playerVars: {
-                    listType:'playlist',
+                    listType: 'playlist',
                     list: playlistId
                 },
                 events: {
@@ -47,8 +80,11 @@
         }
     </script>
 
+    <footer>
+        <p>&copy; 2023 Vida al hilo team | Sitio dedicado a la moda sostenible</p>
+    </footer>
+
 </body>
 </html>
-
 
 {% endblock %}
