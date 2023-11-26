@@ -1,0 +1,54 @@
+{% extends "installed_apps/plantilla padre.html" %}
+{% block title %} tutoriales {% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Reproducción de Tutoriales</title>
+    <!-- Agrega la siguiente línea para cargar la API de YouTube -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+
+    <h1>Tutoriales</h1>
+
+    <div id="playlist"></div>
+
+    <script>
+        // Cambia 'TU_ID_DE_LISTA_DE_REPRODUCCION' con el ID real de tu lista de reproducción en YouTube
+        var playlistId = 'PLL3T5LG0XJ-q-VrTJ-GBDDN9BbomWTm2o';
+
+        // Configuración de la API de YouTube
+        function onYouTubeIframeAPIReady() {
+            var player;
+            player = new YT.Player('playlist', {
+                height: '315',
+                width: '560',
+                playerVars: {
+                    listType:'playlist',
+                    list: playlistId
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        function onPlayerStateChange(event) {
+            // Puedes agregar acciones adicionales según el estado del reproductor (por ejemplo, cuando se completa un video)
+        }
+    </script>
+
+</body>
+</html>
+
+
+{% endblock %}

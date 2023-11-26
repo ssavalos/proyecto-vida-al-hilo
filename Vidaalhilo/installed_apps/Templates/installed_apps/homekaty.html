@@ -1,0 +1,32 @@
+{% extends "installed_apps/plantilla padre.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Crea tu outfit!</h1>
+    <form method="post" action="{% url 'concatenar_fotos' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        <!-- Añade tus campos de formulario, por ejemplo, campos de carga de archivos -->
+        <label for="prenda1">Prenda 1:</label>
+        <input type="file" name="prenda1" accept="image/*" required>
+        
+        <label for="prenda2">Prenda 2:</label>
+        <input type="file" name="prenda2" accept="image/*" required>
+    
+        <!-- Otros campos de formulario según tus necesidades -->
+    
+        <button type="submit">Concatenar Imágenes</button>
+    </form>
+    
+    <img src="data:image/png;base64,{{ imagen_final }}" alt="Imagen Concatenada">
+</body>
+</html>
+
+{% endblock %}
