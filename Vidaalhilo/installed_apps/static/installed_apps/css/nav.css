@@ -20,6 +20,10 @@ body {
     margin-bottom: 10px;
 }
 
+.navbar-left{
+    margin-left: -100px;
+}
+
 #navbarDropdown {
     color: white;
     font-size: 24px;
@@ -28,6 +32,10 @@ body {
 
 #navbarDropdown::after {
     display: none !important;
+}
+
+.navbar-right{
+    margin-right: -100px;
 }
 
 #barrita {
