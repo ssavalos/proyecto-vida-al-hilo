@@ -16,7 +16,7 @@ def ver_perfil(request, usuario_id):
     return render(request, 'perfil.html', {'user': usuario})  # Renderiza la plantilla con los datos del usuario
 
 def General_Pagina(request):
-    return render(request, "installed_apps/Home.html")
+    return render(request, "installed_apps/home.html")
 
 
 def Videos_Pagina(request):
