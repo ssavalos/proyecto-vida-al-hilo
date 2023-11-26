@@ -19,6 +19,16 @@ body {
     padding: 10px 20px; /* Ajusta el espacio interno de la barra de navegación */
 }
 
+#navbarDropdown {
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+#navbarDropdown::after {
+    display: none !important;
+}
+
 #logo {
     font-size: 30px;
     font-weight: 600;
