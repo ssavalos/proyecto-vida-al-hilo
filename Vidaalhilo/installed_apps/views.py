@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect 
 from django.core.mail import send_mail
 from django.conf import settings
 from installed_apps.catalogo.helpers import concatenar_imagenes
@@ -10,23 +10,20 @@ from .form import User
 from PIL import Image
 import base64
 import os
+from django.contrib.auth.decorators import login_required
+from .form import FotoForm
+
+
 
 def ver_perfil(request, usuario_id):
     usuario = User.objects.get(id=usuario_id)  # Recupera el usuario desde la base de datos
     return render(request, 'perfil.html', {'user': usuario})  # Renderiza la plantilla con los datos del usuario
-
 def General_Pagina(request):
     return render(request, "installed_apps/Home.html")
-
-
 def Videos_Pagina(request):
     return render(request, "installed_apps/Videos.html")
-
-
 def Buscador(request):
     return render(request, "installed_apps/Buscador.html")
-
-
 def Contacto(request):
     if request.method == "POST":
         subject = request.POST["asunto"]
@@ -56,24 +53,20 @@ def registrarse(request):
 
 def homekaty(request):
     return render(request, "installed_apps/homekaty.html")
-
-
+def mujeres(request):
+    return render(request, "installed_apps/mujeres.html")
+def hombres(request):
+    return render(request, "installed_apps/hombres.html")
+def niños(request):
+    return render(request, "installed_apps/niños.html")
 def comofuncionamos(request):
     return render(request, "installed_apps/comofuncionamos.html")
-
-
 def tutoriales(request):
     return render(request, "installed_apps/tutoriales.html")
-
-
 def olvidastelacontraseña(request):
     return render(request, "installed_apps/olvidastelacontraseña.html")
-
-
 def perfil(request):
     return render(request, "installed_apps/perfil.html")
-
-
 def concatenar_fotos(request):
     if request.method == "POST":
         # Obtén las rutas de las imágenes desde el formulario
@@ -100,3 +93,19 @@ def concatenar_fotos(request):
     else:
         # Maneja el caso cuando el método no es POST
         return HttpResponse("Método no permitido")
+    
+@login_required
+def publicar_foto(request):
+    if request.method == 'POST':
+        form = FotoForm(request.POST, request.FILES)
+        if form.is_valid():
+            foto = form.save(commit=False)
+            foto.usuario = request.user
+            foto.save()
+            return redirect('listar_fotos')  # Ajusta esto a la vista que muestra la lista de fotos
+    else:
+        form = FotoForm()
+
+    return render(request, 'publicar_foto.html', {'form': form})
+
+   
