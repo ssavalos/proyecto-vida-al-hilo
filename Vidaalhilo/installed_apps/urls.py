@@ -1,7 +1,10 @@
 from django.urls import path
 from installed_apps import views
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include 
+from .views import publicar_foto, listar_fotos
+
+
 
 urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
@@ -17,4 +20,7 @@ urlpatterns = [
     path('olvidastelacontraseña/',views.olvidastelacontraseña),
     path('perfil/',views.perfil),
     path('concatenar/', views.concatenar_fotos, name='concatenar_fotos'),
+    path('publicar_foto/', views.publicar_foto, name='publicar_foto'),
+    path('listar_fotos/', views.listar_fotos, name='listar_fotos')
+
 ]

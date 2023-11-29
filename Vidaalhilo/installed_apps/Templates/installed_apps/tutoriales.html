@@ -1,5 +1,5 @@
 {% extends "installed_apps/plantilla padre.html" %}
-{% block title %} tutoriales {% endblock %}
+{% block title %} Tutoriales {% endblock %}
 {% block content %}
 
 <!DOCTYPE html>
@@ -7,15 +7,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Reproducción de Tutoriales</title>
+
+    <!-- Bootstrap -->
+    <link href="../installed_apps/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- jQuery from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     <!-- Agrega la siguiente línea para cargar la API de YouTube -->
     <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <title>Lista de Reproducción de Tutoriales</title>
+    <style>
+        body {
+            font-family: 'Lora';
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+        }
+        h1 {
+            color: rgb(102, 0, 102);
+            font-family: 'Raleway';
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        #content-container {
+            display: flex;
+            margin: 10px;
+        }
+        #playlist {
+            width: 40%;
+            margin-right: 10px;
+        }
+        #tips-section {
+            width: 60%;
+            overflow: hidden;
+            position: relative;
+            margin-left: 30px;
+            color: rgb(66, 66, 66);
+        }
+        .tips-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            margin-left: 30px;
+            color: rgb(66, 66, 66);
+        }
+        .tip {
+            display: flex;
+        }
+        .tip-content {
+            width: 70%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .tip img {
+            max-width: 100%;
+            height: auto;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        footer {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Mis Tutoriales</h1>
+    <header>
+        <h1>Tutoriales para cuidar y remodelar tu ropa</h1>
+        <p>Descubre consejos y técnicas para mantener tu ropa en buen estado y contribuir a un estilo de vida más sostenible.</p>
+    </header>
 
-    <div id="playlist"></div>
+    <div id="content-container">
+
+        <div id="playlist"></div>
+
+        <!-- Nueva sección de Tips -->
+        <div id="tips-section" style="background-color: #f0f0f0; padding: 20px; border-radius: 10px;">
+            <h2 style="margin-bottom: 15px;">Tips que podrían ayudarte</h2>
+
+            <!-- Slider de Tips -->
+            <div class="tips-container">
+                <div class="tip">
+                    <div class="tip-content">
+                        <h3>Tip 1: Cómo lavar prendas delicadas</h3>
+                        <p>Utiliza agua fría y un detergente suave. Además, considera usar una bolsa de lavandería para prendas más delicadas.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 1: Lavado de prendas delicadas">
+                </div>
+                <div class="tip">
+                    <div class="tip-content">
+                        <h3>Tip 2: Transforma tus camisetas en bolsas reutilizables</h3>
+                        <p>Convierte camisetas viejas en bolsas prácticas. Corta las mangas y el cuello, cose el fondo, ¡y listo!</p>
+                    </div>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 2: Transformación de camisetas en bolsas">
+                </div>
+                <div class="tip">
+                    <div class="tip-content">
+                        <h3>Tip 3: Cómo hacer una bolsa con un pantalón</h3>
+                        <p>Transforma un pantalón viejo en una bolsa reutilizable. Corta las piernas y cose los extremos para crear un bolso único y ecológico.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 3: Bolsa con un pantalón">
+                </div>
+                <div class="tip">
+                    <div class="tip-content">
+                        <h3>Tip 4: Cómo hacer un estuche con una camisa</h3>
+                        <p>Reutiliza una camisa para hacer un estuche. Corta la parte de la camisa con los botones y cose los extremos para crear un estuche práctico.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 4: Estuche con una camisa">
+                </div>
+                <!-- Agregados más tips -->
+                <div class="tip">
+                    <div class="tip-content">
+                        <h3>Tip 5: [Tu nuevo tip]</h3>
+                        <p>[Descripción de tu nuevo tip]</p>
+                    </div>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 5: [Tu nueva imagen]">
+                </div>
+                <div class="tip">
+                    <div class="tip-content">
+                        <h3>Tip 6: [Otro nuevo tip]</h3>
+                        <p>[Descripción de otro nuevo tip]</p>
+                    </div>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 6: [Otra nueva imagen]">
+                </div>
+            </div>
+
+            <!-- Botones de Navegación -->
+            <button class="slider-button prev" onclick="prevSlide()">&#9665;</button>
+            <button class="slider-button next" onclick="nextSlide()">&#9655;</button>
+        </div>
+
+    </div>
 
     <script>
         // Cambia 'TU_ID_DE_LISTA_DE_REPRODUCCION' con el ID real de tu lista de reproducción en YouTube
@@ -26,9 +175,9 @@
             var player;
             player = new YT.Player('playlist', {
                 height: '315',
-                width: '560',
+                width: '100%',
                 playerVars: {
-                    listType:'playlist',
+                    listType: 'playlist',
                     list: playlistId
                 },
                 events: {
@@ -45,10 +194,42 @@
         function onPlayerStateChange(event) {
             // Puedes agregar acciones adicionales según el estado del reproductor (por ejemplo, cuando se completa un video)
         }
+
+        // Funciones para el Slider de Tips
+        var slideIndex = 0;
+
+        function showSlides() {
+            var slides = document.querySelectorAll('.tip');
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex].style.display = 'flex';
+        }
+
+        function prevSlide() {
+            if (slideIndex > 0) {
+                slideIndex--;
+            }
+            showSlides();
+        }
+
+        function nextSlide() {
+            var slides = document.querySelectorAll('.tip');
+            if (slideIndex < slides.length - 1) {
+                slideIndex++;
+            }
+            showSlides();
+        }
+
+        // Mostrar el primer slide al cargar la página
+        showSlides();
     </script>
+
+    <footer>
+        <p>&copy; 2023 Vida al hilo team | Sitio dedicado a la moda sostenible</p>
+    </footer>
 
 </body>
 </html>
-
 
 {% endblock %}

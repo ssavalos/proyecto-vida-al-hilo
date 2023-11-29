@@ -7,10 +7,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado de Concatenación</title>
 </head>
 <body>
-    <h1>Resultado de concatenación de imágenes</h1>
+    <h1>Crea tu outfit!</h1>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="../publicar_foto" id="publicar">publicar foto<span class="sr-only"></span></a>
+      </li>
+
     <form method="post" action="{% url 'concatenar_fotos' %}" enctype="multipart/form-data">
         {% csrf_token %}
     
