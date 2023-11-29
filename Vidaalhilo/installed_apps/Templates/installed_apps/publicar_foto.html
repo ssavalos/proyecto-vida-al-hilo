@@ -1,0 +1,24 @@
+{% extends "installed_apps/plantilla padre.html" %}
+{% block title %} publicar {% endblock %}
+{% block content %}
+
+<!-- publicar_foto.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Publicar Foto</title>
+</head>
+<body>
+    <h1>Publicar Foto</h1>
+
+    <form method="post" action="{% url 'publicar_foto' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Publicar</button>
+    </form>
+
+    <a href="{% url 'listar_fotos' %}">Volver a la lista de fotos</a>
+</body>
+</html>
+
+{% endblock %}

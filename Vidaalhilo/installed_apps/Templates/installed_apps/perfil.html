@@ -10,11 +10,12 @@
 <body>
     <h1>Perfil de Usuario</h1>
     <div>
-        <h2>Nombre: {{ user.nombre }}</h2>
-        <p>Correo: {{ user.correo }}</p>
-        <p>Edad: {{ user.edad }}</p>
+        <h2>Nombre: {{ user.username }}</h2>
+        <p>Correo: {{ user.email }}</p>
+        <p></p>
         
         <!-- Otros campos y detalles del usuario -->
+        <a href="{% url 'listar_fotos' %}">Lista de fotos</a>
     </div>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{% extends "installed_apps/plantilla padre.html" %}
+{% block title %} Lista de fotos {% endblock %}
+{% block content %}
+
+<!-- listar_fotos.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado de Fotos</title>
+</head>
+<body>
+    <h1>Listado de Fotos</h1>
+
+    <ul>
+        {% for foto in fotos %}
+            <li>
+                <p>{{ foto.descripcion }}</p>
+                <img src="{{ foto.imagen.url }}" alt="{{ foto.descripcion }}" height="200">
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'publicar_foto' %}">Publicar Nueva Foto</a>
+</body>
+</html>
+
+{% endblock %}

@@ -10,6 +10,11 @@
 </head>
 <body>
     <h1>Crea tu outfit!</h1>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="../publicar_foto" id="publicar">publicar foto<span class="sr-only"></span></a>
+      </li>
+
     <form method="post" action="{% url 'concatenar_fotos' %}" enctype="multipart/form-data">
         {% csrf_token %}
     
