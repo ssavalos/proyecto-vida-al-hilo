@@ -1,5 +1,5 @@
 {% extends "installed_apps/plantilla padre.html" %}
-{% block title %} tutoriales {% endblock %}
+{% block title %} Tutoriales {% endblock %}
 {% block content %}
 
 <!DOCTYPE html>
@@ -7,15 +7,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Reproducción de Tutoriales</title>
+
+    <!-- Bootstrap -->
+    <link href="../installed_apps/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- jQuery from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     <!-- Agrega la siguiente línea para cargar la API de YouTube -->
     <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <title>Lista de Reproducción de Tutoriales</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff; /* blanco */
+            color: #000; /* negro para el texto principal */
+            margin: 0; /* Eliminamos márgenes para que el cuerpo sea más compacto */
+        }
+        h1 {
+            color: rgb(102, 0, 102); /* púrpura oscuro */
+            font-family: 'Raleway';
+            font-weight: 400;
+        }
+        #content-container {
+            display: flex; /* Utilizamos flexbox para colocar el reproductor y los tips en línea */
+            margin: 10px; /* Añadimos un pequeño margen alrededor del contenido */
+        }
+        #playlist {
+            width: 40%; /* Ajustamos el ancho del reproductor */
+            margin-right: 10px; /* Añadimos un pequeño margen a la derecha del reproductor */
+        }
+        #tips-section {
+            width: 60%; /* Ajustamos el ancho de los tips */
+            overflow: hidden; /* Ocultamos los elementos que desbordan el contenedor */
+            position: relative;
+        }
+        .tips-container {
+            display: flex; /* Utilizamos flexbox para colocar los tips en una fila */
+            transition: transform 0.5s ease; /* Agregamos una transición para el deslizamiento */
+        }
+        .tip {
+            width: 100%; /* Ancho del contenedor del tip */
+            box-sizing: border-box; /* Incluimos el relleno en el tamaño total */
+            padding: 20px; /* Espaciado interno */
+        }
+        .tip img {
+            max-width: 100%; /* Ajustamos el ancho máximo de las imágenes para que no sean tan grandes */
+            height: auto; /* Mantenemos la proporción original de la imagen */
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        footer {
+            background-color: #f0f0f0; /* gris claro */
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px; /* Ajustamos el margen superior del pie de página */
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Tutoriales</h1>
+    <header>
+        <h1>Tutoriales para cuidar y remodelar tu ropa</h1>
+        <p>Descubre consejos y técnicas para mantener tu ropa en buen estado y contribuir a un estilo de vida más sostenible.</p>
+    </header>
 
-    <div id="playlist"></div>
+    <div id="content-container">
+
+        <div id="playlist"></div>
+
+        <!-- Nueva sección de Tips -->
+        <div id="tips-section">
+            <h2>Tips que podrían ayudarte</h2>
+
+            <!-- Slider de Tips -->
+            <div class="tips-container">
+                <div class="tip">
+                    <h3>Tip 1: Cómo lavar prendas delicadas</h3>
+                    <p>Utiliza agua fría y un detergente suave. Además, considera usar una bolsa de lavandería para prendas más delicadas.</p>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 1: Lavado de prendas delicadas">
+                </div>
+                <div class="tip">
+                    <h3>Tip 2: Transforma tus camisetas en bolsas reutilizables</h3>
+                    <p>Convierte camisetas viejas en bolsas prácticas. Corta las mangas y el cuello, cose el fondo, ¡y listo!</p>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 2: Transformación de camisetas en bolsas">
+                </div>
+                <div class="tip">
+                    <h3>Tip 3: Cómo quitar manchas difíciles</h3>
+                    <p>Aplica una mezcla de bicarbonato de sodio y agua en la mancha antes de lavar. Frota suavemente y luego lava como de costumbre.</p>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 3: Quitar manchas difíciles">
+                </div>
+                <div class="tip">
+                    <h3>Tip 4: Almacenamiento adecuado de la ropa de temporada</h3>
+                    <p>Guarda la ropa de temporada que no estás usando en bolsas al vacío para ahorrar espacio y protegerla del polvo.</p>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 4: Almacenamiento de ropa de temporada">
+                </div>
+                <div class="tip">
+                    <h3>Tip 5: Cómo planchar rápidamente</h3>
+                    <p>Coloca una lámina de papel de aluminio debajo de la prenda mientras planchas para reducir el tiempo de planchado a la mitad.</p>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 5: Planchado rápido">
+                </div>
+                <div class="tip">
+                    <h3>Tip 6: [Tu nuevo tip]</h3>
+                    <p>[Descripción de tu nuevo tip]</p>
+                    <img src="https://via.placeholder.com/150" alt="Imagen 6: [Tu nueva imagen]">
+                </div>
+            </div>
+
+            <!-- Botones de Navegación -->
+            <button class="slider-button prev" onclick="prevSlide()">&#9665;</button>
+            <button class="slider-button next" onclick="nextSlide()">&#9655;</button>
+        </div>
+
+    </div>
 
     <script>
         // Cambia 'TU_ID_DE_LISTA_DE_REPRODUCCION' con el ID real de tu lista de reproducción en YouTube
@@ -26,9 +153,9 @@
             var player;
             player = new YT.Player('playlist', {
                 height: '315',
-                width: '560',
+                width: '100%', /* Ajustamos el ancho del reproductor al 100% */
                 playerVars: {
-                    listType:'playlist',
+                    listType: 'playlist',
                     list: playlistId
                 },
                 events: {
@@ -45,10 +172,42 @@
         function onPlayerStateChange(event) {
             // Puedes agregar acciones adicionales según el estado del reproductor (por ejemplo, cuando se completa un video)
         }
+
+        // Funciones para el Slider de Tips
+        var slideIndex = 0;
+
+        function showSlides() {
+            var slides = document.querySelectorAll('.tip');
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[slideIndex].style.display = 'block';
+        }
+
+        function prevSlide() {
+            if (slideIndex > 0) {
+                slideIndex--;
+            }
+            showSlides();
+        }
+
+        function nextSlide() {
+            var slides = document.querySelectorAll('.tip');
+            if (slideIndex < slides.length - 1) {
+                slideIndex++;
+            }
+            showSlides();
+        }
+
+        // Mostrar el primer slide al cargar la página
+        showSlides();
     </script>
+
+    <footer>
+        <p>&copy; 2023 Vida al hilo team | Sitio dedicado a la moda sostenible</p>
+    </footer>
 
 </body>
 </html>
-
 
 {% endblock %}
