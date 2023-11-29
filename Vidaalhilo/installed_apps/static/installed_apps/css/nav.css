@@ -21,7 +21,7 @@ body {
 }
 
 .navbar-left{
-    margin-left: -100px;
+    margin-left: -75px;
 }
 
 #navbarDropdown {
@@ -35,7 +35,7 @@ body {
 }
 
 .navbar-right{
-    margin-right: -100px;
+    margin-right: -75px;
 }
 
 #barrita {

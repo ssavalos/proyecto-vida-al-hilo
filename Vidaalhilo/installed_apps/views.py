@@ -12,6 +12,7 @@ import base64
 import os
 from django.contrib.auth.decorators import login_required
 from .form import FotoForm
+from .models import Foto
 
 
 
@@ -106,6 +107,10 @@ def publicar_foto(request):
     else:
         form = FotoForm()
 
-    return render(request, 'publicar_foto.html', {'form': form})
+    return render(request, 'installed_apps/publicar_foto.html', {'form': form})
 
-   
+
+def listar_fotos(request):
+    fotos = Foto.objects.all()
+    return render(request, 'installed_apps/listar_fotos.html', {'fotos': fotos})
+  

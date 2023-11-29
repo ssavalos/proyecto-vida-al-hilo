@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'Vidaalhilo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'base_vidaalhilo',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'cata987',
         'HOST': 'localhost',
@@ -132,6 +132,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# settings.py
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
+
 
 
 # Default primary key field type
