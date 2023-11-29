@@ -1,6 +1,86 @@
-/* nav.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
 
-.navbar-purple {
-    background-color: #9370DB; /* Morado claro en formato hexadecimal */
- }
- 
+body {
+    font-family: 'Arial', sans-serif; /* Ajusta la fuente según tus preferencias */
+}
+
+#navbar {
+    background: rgb(102, 0, 102);
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
+    padding: 5px 5px; /* Ajusta el espacio interno de la barra de navegación */
+    margin-bottom: 10px;
+}
+
+.navbar-left{
+    margin-left: -100px;
+}
+
+#navbarDropdown {
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+#navbarDropdown::after {
+    display: none !important;
+}
+
+.navbar-right{
+    margin-right: -100px;
+}
+
+#barrita {
+    border-radius: 20px;
+}
+
+#buscar {
+    border: none;
+    background-color: rgba(255, 255, 255, .2);
+    color: white;
+    font-size: 17px;
+    border-radius: 20px;
+}
+
+#buscar:hover {
+    color: white;
+}
+
+#logo {
+    font-size: 35px;
+    font-weight: 900;
+    color: white;
+    font-family: 'Raleway';
+}
+
+#inicio {
+    color: white;
+    font-family: 'Raleway';
+    margin-top: 17px;
+}
+
+#tutoriales {
+    color: white;
+    font-family: 'Raleway';
+    margin-top: 17px;
+}
+
+#comofuncionamos {
+    color: white;
+    font-family: 'Raleway';
+    margin-top: 17px;
+}
+
+#perfil {
+    color: white;
+    font-size: 35px;
+    margin-top: 5px;
+}
