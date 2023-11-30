@@ -1,0 +1,19 @@
+<!-- eliminar_publicacion.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Publicación</title>
+</head>
+<body>
+    <h1>Eliminar Publicación</h1>
+
+    <p>¿Estás seguro de que deseas eliminar la publicación "{{ publicacion.titulo }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sí, eliminar</button>
+    </form>
+
+    <a href="{% url 'listar_publicaciones' %}">Cancelar</a>
+</body>
+</html>

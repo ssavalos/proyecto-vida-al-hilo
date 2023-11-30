@@ -20,8 +20,12 @@ body {
     margin-bottom: 10px;
 }
 
-.navbar-left { 
-    margin-left: -75px;
+.navbar-left{
+    margin-left: -200px;
+}
+
+.navbar-right{
+    margin-right: -200px;
 }
 
 #navbarDropdown {
