@@ -13,4 +13,4 @@ class RegisterForm(UserCreationForm):
 class FotoForm(forms.ModelForm):
     class Meta:
         model = Foto
-        fields = ['imagen', 'descripcion']
+        fields = ['imagen', 'descripcion', 'categoria', 'genero']
