@@ -6,8 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('installed_apps', '0005_seccion'),
-        ('installed_apps', '0005_seccion_foto'),
+        ('installed_apps', '0005_seccion')
     ]
 
     operations = [
