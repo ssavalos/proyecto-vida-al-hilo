@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
 from installed_apps.catalogo.helpers import concatenar_imagenes
@@ -13,12 +13,12 @@ import os
 from django.contrib.auth.decorators import login_required
 from .form import FotoForm
 from .models import Foto
-
-
+from .models import Publicacion
 
 def ver_perfil(request, usuario_id):
     usuario = User.objects.get(id=usuario_id)  # Recupera el usuario desde la base de datos
     return render(request, 'perfil.html', {'user': usuario})  # Renderiza la plantilla con los datos del usuario
+
 def General_Pagina(request):
     return render(request, "installed_apps/Home.html")
 
@@ -114,4 +114,12 @@ def publicar_foto(request):
 def listar_fotos(request):
     fotos = Foto.objects.all()
     return render(request, 'installed_apps/listar_fotos.html', {'fotos': fotos})
-  
+
+def eliminar_publicacion(request, publicacion_id):
+    publicacion = get_object_or_404(Publicacion, pk=publicacion_id)
+    
+    if request.method == 'POST':
+        publicacion.delete()
+        return redirect('listar_publicaciones')
+
+    return render(request, 'installed_apps/eliminar_publicacion.html', {'publicacion': publicacion})

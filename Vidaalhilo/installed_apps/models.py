@@ -27,3 +27,11 @@ class Foto(models.Model):
 
     def __str__(self):
         return self.descripcion
+    
+    
+class Publicacion(models.Model):
+    titulo = models.CharField(max_length=255)
+    contenido = models.TextField()
+
+    def __str__(self):
+        return self.titulo
