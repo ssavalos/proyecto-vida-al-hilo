@@ -24,6 +24,8 @@ class Foto(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to='fotos/')
     descripcion = models.TextField()
+    categoria = models.CharField(max_length=20, choices=[('superior', 'Parte superior'), ('inferior', 'Parte inferior')], default='superior')
+    genero = models.CharField(max_length=10, choices=[('mujer', 'Mujer'), ('hombre', 'Hombre'), ('niño', 'Niño')], default='mujer')
 
     def __str__(self):
         return self.descripcion
