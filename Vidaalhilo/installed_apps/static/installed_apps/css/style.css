@@ -6,6 +6,7 @@ body {
   background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg_main.jpg");
   background-size: cover;
   background-position: center;
+  font-family: 'Lora';
 }
 
 .wrapper {
@@ -23,4 +24,27 @@ body {
   font-size: 35px;
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Raleway';
+  font-weight: 700;
+}
+
+/* Estilo para el botón de login */
+#log {
+  background-color: #fff; /* Fondo blanco */
+  color: #000; /* Texto negro */
+  border: 2px solid rgb(164, 148, 164); /* Borde negro de 2px */
+  border-radius: 20px; /* Bordes circulares */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para cambio de color */
+  display: block;
+  margin: 0 auto;
+  padding: 8px 30px;
+  font-size: 18px;
+  font-family: 'Raleway';
+  font-weight: 600;
+}
+
+/* Cambio de color al pasar el cursor */
+#log:hover {
+  background-color: rgb(166, 148, 164); /* Fondo negro al pasar el cursor */
+  color: #fff; /* Texto blanco al pasar el cursor */
 }

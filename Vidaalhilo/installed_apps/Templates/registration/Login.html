@@ -8,6 +8,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="../installed_apps/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
   <title>Login</title>
   <link href="{% static 'installed_apps/css/style.css' %}" rel="stylesheet" type="text/css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -22,7 +30,7 @@
         {% csrf_token %}
         {{form|crispy}}
         <p>No tienes una cuenta? Crea una <a href="/registrarse">aquí</a></p>
-        <button type="submit" class="btn btn-success">Login</button>
+        <button type="submit" class="btn btn-success btn-login" id="log">Ingresa</button>
       </form>
     {% endblock %}
   </div>

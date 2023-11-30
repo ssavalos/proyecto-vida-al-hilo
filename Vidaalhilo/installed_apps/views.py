@@ -21,6 +21,7 @@ def ver_perfil(request, usuario_id):
 
 def General_Pagina(request):
     return render(request, "installed_apps/Home.html")
+
 def Videos_Pagina(request):
     return render(request, "installed_apps/Videos.html")
 def Buscador(request):
