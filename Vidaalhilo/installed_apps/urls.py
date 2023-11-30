@@ -2,9 +2,8 @@ from django.urls import path
 from installed_apps import views
 from django.contrib import admin
 from django.urls import path, include 
-from .views import publicar_foto, listar_fotos
-
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
@@ -21,6 +20,8 @@ urlpatterns = [
     path('perfil/',views.perfil),
     path('concatenar/', views.concatenar_fotos, name='concatenar_fotos'),
     path('publicar_foto/', views.publicar_foto, name='publicar_foto'),
-    path('listar_fotos/', views.listar_fotos, name='listar_fotos')
-
+    path('listar_fotos/', views.listar_fotos, name='listar_fotos'),
+    path('publicacion/<int:publicacion_id>/eliminar/', views.eliminar_publicacion, name='eliminar_publicacion')
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
