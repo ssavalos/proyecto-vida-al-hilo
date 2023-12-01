@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos horizontalmente */
     align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
-    padding: 5px 5px; /* Ajusta el espacio interno de la barra de navegación */
+    padding: 0px 5px; /* Ajusta el espacio interno de la barra de navegación */
     margin-bottom: 10px;
 }
 
@@ -55,10 +55,10 @@ body {
 }
 
 #logo {
-    font-size: 35px;
-    font-weight: 900;
+    font-size: 50px;
+    font-weight: 400;
     color: white;
-    font-family: 'Raleway';
+    font-family: 'Voltaire', sans-serif;
 }
 
 #inicio {
@@ -84,3 +84,20 @@ body {
     font-size: 35px;
     margin-top: 5px;
 }
+
+.white {
+    color:rgb(255, 255, 255);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+      font-variation-settings: 'wght' 100;
+    }
+    50% {
+      font-variation-settings: 'wght' 500;
+    }
+    100% {
+      font-variation-settings: 'wght' 100;
+    }
+  }

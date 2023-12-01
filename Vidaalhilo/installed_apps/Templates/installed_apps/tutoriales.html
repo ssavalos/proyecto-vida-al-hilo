@@ -12,6 +12,9 @@
     <link href="../installed_apps/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
@@ -30,12 +33,14 @@
     <style>
         body {
             font-family: 'Raleway';
-            background-color: #fff;
+            background: url(../static/installed_apps/img/black-and-white-boutique-clothes-clothing-rack.jpg);
+            background-size: cover;
+            background-position: center;
             color: #000;
             margin: 0;
         }
         h1 {
-            color: rgb(102, 0, 102);
+            color: rgb(0, 0, 0);
             font-family: 'Raleway';
             font-weight: 600;
             margin-left: 10px;
@@ -47,6 +52,15 @@
         #playlist {
             width: 40%;
             margin-right: 10px;
+            border: 3px solid black;
+            padding:10px;
+        }
+        #slogan {
+            margin-left: 270px;
+            margin-right: 270px;
+            overflow: hidden;
+            position: center;
+            border-radius: 20px;
         }
         #tips-section {
             width: 60%;
@@ -95,15 +109,30 @@
             background-color: #f0f0f0;
             padding: 10px;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 122px;
+        }
+        .slogan2 {
+            font-size: 30px;
+            text-align: center;
+
+        }
+        .slogan3 {
+            font-size: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Tutoriales para cuidar y remodelar tu ropa</h1>
-        <p>Descubre consejos y técnicas para mantener tu ropa en buen estado y contribuir a un estilo de vida más sostenible.</p>
+        <div id="slogan" style="background-color:rgb(197, 183, 225)">
+            <div class="slogan2">
+                <p>Tutoriales para cuidar y remodelar tu ropa</p>
+            </div>    
+            <div class="slogan3">
+                <p>Descubre consejos y técnicas para mantener tu ropa en buen estado y contribuir a un estilo de vida más sostenible.</p>
+            </div>
+        </div>
     </header>
 
     <div id="content-container">
