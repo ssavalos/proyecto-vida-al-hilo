@@ -12,7 +12,6 @@ urlpatterns = [
     path('videos/',views.Videos_Pagina),
     path('buscador/',views.Buscador),
     path('contacto/',views.Contacto),
-    path('admin/', admin.site.urls),
     path('homekaty/',views.homekaty),
     path('comofuncionamos/',views.comofuncionamos),
     path('tutoriales/',views.tutoriales),
