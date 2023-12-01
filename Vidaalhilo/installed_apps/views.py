@@ -14,6 +14,7 @@ from django.contrib.auth.decorators import login_required
 from .form import FotoForm
 from .models import Foto
 from .models import Publicacion
+from itertools import groupby
 
 def ver_perfil(request, usuario_id):
     usuario = User.objects.get(id=usuario_id)  # Recupera el usuario desde la base de datos
@@ -54,7 +55,11 @@ def registrarse(request):
 
 
 def homekaty(request):
-    return render(request, "installed_apps/homekaty.html")
+    fotos = Foto.objects.all().order_by('categoria', 'id')
+    grouped_photos = {categoria: list(g) for categoria, g in groupby(fotos, key=lambda x: x.categoria)}
+    return render(request, "installed_apps/homekaty.html", {'grouped_photos': grouped_photos})
+
+
 def mujeres(request):
     return render(request, "installed_apps/mujeres.html")
 def hombres(request):
