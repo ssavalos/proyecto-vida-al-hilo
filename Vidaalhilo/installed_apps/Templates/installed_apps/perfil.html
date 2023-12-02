@@ -12,9 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
-    <!-- plantilla.html -->
-<a href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a>
-
     <title>Perfil de Usuario</title>
     <style>
         body {
@@ -34,16 +31,16 @@
         }
 
         .user-profile {
-            max-width: 600px;
+            max-width: 550px;
             margin: 50px auto;
             background-color: #fff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .profile-details {
-            text-align: left;
+            text-align: center;
             margin-top: 20px;
         }
 
@@ -56,7 +53,13 @@
             text-align: center;
         }
 
-        #boton {
+        .logout-button {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #boton,
+        #cs {
             background-color: rgb(113, 76, 113); 
             color: white; 
             padding: 15px 20px; /* Ajusta el tamaño del botón */
@@ -64,13 +67,15 @@
             border-radius: 25px; /* Bordes redondos */
             cursor: pointer;
             text-decoration: none;
-            font-size: 16px; /* Ajusta el tamaño de la fuente */
+            font-size: 15px; /* Ajusta el tamaño de la fuente */
             font-family: 'Raleway';
             font-weight: 600;
         }
+        
     </style>
 </head>
 <body>
+
     <div class="user-profile">
         <h1>¡Bienvenido/a, {{ user.username }}!</h1>
         <div class="profile-details">
@@ -82,6 +87,11 @@
         <div class="centered-button">
             <button onclick="window.location.href= '{% url 'mis_publicaciones' %}'" id="boton">Ver mis publicaciones</button>  
         </div>
+
+        <div class="logout-button">
+            <button onclick="window.location.href= '{% url 'cerrar_sesion' %}'" id="cs">Cerrar sesión</button>  
+        </div>
+        
     </div>
 </body>
 </html>

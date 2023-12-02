@@ -31,7 +31,6 @@ urlpatterns = [
     path('cerrar_sesion/', LogoutView.as_view(), name='cerrar_sesion'),
     path('cerrar_sesion/', cerrar_sesion, name='cerrar_sesion'),
     path('mis_publicaciones/', views.mis_publicaciones, name='mis_publicaciones')
-  
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
