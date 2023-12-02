@@ -1,0 +1,103 @@
+{% extends "installed_apps/plantilla padre.html" %}
+{% block title %} Mis publicaciones {% endblock %}
+{% block content %}
+
+<!-- MisPublicaciones.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts --> 
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <title>Mis Publicaciones</title>
+
+    <style>
+        body {
+            background-image: url(../static/installed_apps/img/black-and-white-boutique-clothes-clothing-rack.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #titulo {
+            font-family: 'Raleway';
+            font-weight: 700;
+            background-color: rgba(102, 0, 102, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .publicar-button {
+            display: flex;
+            align-items: center;
+        }
+
+        .publicar-button button {
+            background-color: rgb(102, 0, 102);
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .publicaciones {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .publicacion {
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Raleway';
+            font-weight: 600;
+            background-color: white; /* Fondo blanco */
+            margin-bottom: 20px; /* Espaciado inferior */
+        }
+
+        #prenda {
+            color: rgb(102, 0, 102);
+            font-size: 25px;
+        }
+
+        .publicacion img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 id="titulo">
+        Mis Publicaciones
+        <div class="publicar-button">
+            <button onclick="window.location.href= '{% url 'publicar_foto' %}'" id="publicar">Publicar foto</button>
+        </div>
+    </h2>
+
+    <div class="publicaciones">
+        {% for foto in mis_publicaciones %}
+            <div class="publicacion">
+                <p id="prenda">{{ foto.descripcion }}</p>
+                <img src="{{ foto.imagen.url }}" alt="{{ foto.descripcion }}">
+                <p>Teléfono: {{ foto.telefono }}</p>
+                <p>Categoría: {{ foto.get_categoria_display }}</p>
+                <p>Género: {{ foto.get_genero_display }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+{% endblock %}

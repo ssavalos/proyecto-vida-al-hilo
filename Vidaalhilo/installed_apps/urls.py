@@ -4,6 +4,9 @@ from django.contrib import admin
 from django.urls import path, include 
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth.views import LogoutView
+from .views import cerrar_sesion
+
 
 urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
@@ -24,8 +27,10 @@ urlpatterns = [
     path('buscar/', views.buscar_fotos, name='buscar_fotos'),
     path('mujeres/', views.mostrar_fotos_mujeres, name='mostrar_fotos_mujeres'),
     path('hombres/', views.mostrar_fotos_hombres, name='mostrar_fotos_hombres'),
-    path('ninos/', views.mostrar_fotos_ninos, name='mostrar_fotos_ninos')
-
+    path('ninos/', views.mostrar_fotos_ninos, name='mostrar_fotos_ninos'),
+    path('cerrar_sesion/', LogoutView.as_view(), name='cerrar_sesion'),
+    path('cerrar_sesion/', cerrar_sesion, name='cerrar_sesion'),
+    path('mis_publicaciones/', views.mis_publicaciones, name='mis_publicaciones')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
