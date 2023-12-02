@@ -82,7 +82,7 @@ def registrarse(request):
 
 
 def homekaty(request):
-    fotos = Foto.objects.all().order_by('categoria', 'id')
+    fotos = Foto.objects.all().order_by('id','categoria')
     grouped_photos = {categoria: list(g) for categoria, g in groupby(fotos, key=lambda x: x.categoria)}
     return render(request, "installed_apps/homekaty.html", {'grouped_photos': grouped_photos})
 
