@@ -1,10 +1,10 @@
 {% extends "installed_apps/plantilla padre.html" %}
-{% block title %} Niños {% endblock %}
+{% block title %} Hombres {% endblock %}
 {% block content %}
 
-<h1>Fotos para Niños</h1>
+<h1>Fotos para Hombres</h1>
 
-{% for foto in fotos_ninos %}
+{% for foto in fotos_hombres %}
     <div>
         <img src="{{ foto.imagen.url }}" alt="{{ foto.descripcion }}">
         <p>{{ foto.descripcion }}</p>

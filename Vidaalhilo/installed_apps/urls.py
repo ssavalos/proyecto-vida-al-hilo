@@ -21,7 +21,11 @@ urlpatterns = [
     path('publicar_foto/', views.publicar_foto, name='publicar_foto'),
     path('listar_fotos/', views.listar_fotos, name='listar_fotos'),
     path('publicacion/<int:publicacion_id>/eliminar/', views.eliminar_publicacion, name='eliminar_publicacion'),
-    path('buscar/', views.buscar_fotos, name='buscar_fotos')
+    path('buscar/', views.buscar_fotos, name='buscar_fotos'),
+    path('mujeres/', views.mostrar_fotos_mujeres, name='mostrar_fotos_mujeres'),
+    path('hombres/', views.mostrar_fotos_hombres, name='mostrar_fotos_hombres'),
+    path('ninos/', views.mostrar_fotos_ninos, name='mostrar_fotos_ninos')
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

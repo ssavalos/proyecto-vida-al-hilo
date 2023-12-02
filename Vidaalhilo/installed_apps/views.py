@@ -40,6 +40,18 @@ def buscar_fotos(request):
         # Maneja otros métodos HTTP según sea necesario
         return HttpResponse("Método no permitido")
 
+#Menu opciones
+def mostrar_fotos_mujeres(request):
+    fotos_mujeres = Foto.objects.filter(genero='mujer')
+    return render(request, 'installed_apps/mujeres.html', {'fotos_mujeres': fotos_mujeres})
+
+def mostrar_fotos_hombres(request):
+    fotos_hombres = Foto.objects.filter(genero='hombre')
+    return render(request, 'installed_apps/hombres.html', {'fotos_hombres': fotos_hombres})
+
+def mostrar_fotos_ninos(request):
+    fotos_ninos = Foto.objects.filter(genero='niño')
+    return render(request, 'installed_apps/niños.html', {'fotos_ninos': fotos_ninos})
 
 
 def Contacto(request):

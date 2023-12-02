@@ -40,11 +40,11 @@
                 <i class='bx bx-menu'></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Mujeres</a>
+                <a class="dropdown-item" href="{% url 'mostrar_fotos_mujeres' %}">Mujeres</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Hombres</a>
+                <a class="dropdown-item" href="{% url 'mostrar_fotos_hombres' %}">Hombres</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Niños</a>
+                <a class="dropdown-item" href="{% url 'mostrar_fotos_ninos' %}">Niños</a>
               </div>
             </li>
           </ul>
@@ -52,7 +52,7 @@
       </div>
 
       <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'buscar_fotos' %}">
-        <input class="form-control mr-sm-2" type="Buscar" name="q" placeholder="Buscar" aria-label="Buscar" id="barrita">
+        <input class="form-control mr-sm-2" type="Buscar" name="q" placeholder="Prenda + Género + etc" aria-label="Buscar" id="barrita">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscar">
           <i class='bx bx-search-alt'></i>
         </button>
