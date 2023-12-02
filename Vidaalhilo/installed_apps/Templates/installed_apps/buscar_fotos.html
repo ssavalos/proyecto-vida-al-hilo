@@ -2,15 +2,37 @@
 {% block title %} Resultados de la búsqueda {% endblock %}
 {% block content %}
 
+<style>
+    .search-results {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .search-result {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .search-result img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
 <h1>Resultados de la búsqueda para "{{ query }}"</h1>
 
-{% for foto in fotos %}
-    <div>
-        <img src="{{ foto.imagen.url }}" alt="{{ foto.descripcion }}">
-        <p>{{ foto.descripcion }}</p>
-        <p>Categoría: {{ foto.get_categoria_display }}</p>
-        <p>Género: {{ foto.get_genero_display }}</p>
-    </div>
-{% endfor %}
+<div class="search-results">
+    {% for foto in fotos %}
+        <div class="search-result">
+            <img src="{{ foto.imagen.url }}" alt="{{ foto.descripcion }}">
+            <p>{{ foto.descripcion }}</p>
+            <p>Teléfono: {{ foto.telefono }}</p>
+            <p>Categoría: {{ foto.get_categoria_display }}</p>
+            <p>Género: {{ foto.get_genero_display }}</p>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
