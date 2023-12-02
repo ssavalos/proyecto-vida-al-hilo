@@ -24,8 +24,8 @@ urlpatterns = [
     path('buscar/', views.buscar_fotos, name='buscar_fotos'),
     path('mujeres/', views.mostrar_fotos_mujeres, name='mostrar_fotos_mujeres'),
     path('hombres/', views.mostrar_fotos_hombres, name='mostrar_fotos_hombres'),
-    path('ninos/', views.mostrar_fotos_ninos, name='mostrar_fotos_ninos')
-
+    path('ninos/', views.mostrar_fotos_ninos, name='mostrar_fotos_ninos'),
+    path('mis_publicaciones/', views.mis_publicaciones, name='mis_publicaciones')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

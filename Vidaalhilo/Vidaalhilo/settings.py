@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'Vidaalhilo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'vidaalhilo',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'cata987',
         'HOST': 'localhost',
