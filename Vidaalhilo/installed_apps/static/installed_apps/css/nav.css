@@ -21,11 +21,11 @@ body {
 }
 
 .navbar-left{
-    margin-left: -100px;
+    margin-left: -200px;
 }
 
 .navbar-right{
-    margin-right: -100px;
+    margin-right: -200px;
 }
 
 #navbarDropdown {
@@ -56,8 +56,12 @@ body {
 
 #logo {
     font-size: 50px;
-    font-weight: 400;
-    color: white;
+    font-weight: 600;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: url(../img/agua2.jpg);
+    background-position: center;
+    background-size: cover;
     font-family: 'Voltaire', sans-serif;
 }
 
@@ -86,7 +90,7 @@ body {
 }
 
 .white {
-    color:rgb(255, 255, 255);
+    color: white;
     animation: pulse 3s infinite;
 }
 
@@ -100,4 +104,7 @@ body {
     100% {
       font-variation-settings: 'wght' 100;
     }
+  }
+  .typeletter{
+    font-family: 'Lobster', sans-serif;
   }

@@ -16,6 +16,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Voltaire&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link href="{% static 'installed_apps/css/nav.css' %}" rel="stylesheet" type="text/css">
@@ -52,7 +55,9 @@
       </div>
 
       <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'buscar_fotos' %}">
-        <input class="form-control mr-sm-2" type="Buscar" name="q" placeholder="Prenda + Género + etc" aria-label="Buscar" id="barrita">
+        <div class="typeletter">
+          <input class="form-control mr-sm-2" type="Buscar" name="q" placeholder="Prenda + Género + etc" aria-label="Buscar" id="barrita">
+        </div>
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscar">
           <i class='bx bx-search-alt'></i>
         </button>
