@@ -30,6 +30,9 @@ def Videos_Pagina(request):
 def Buscador(request):
     return render(request, "installed_apps/Buscador.html")
 
+def mis_publicaciones(request):
+    mis_publicaciones = Foto.objects.filter(usuario=request.user)
+    return render(request, "installed_apps/MisPublicaciones.html", {'mis_publicaciones': mis_publicaciones})
 
 #Buscador que si funciona
 def buscar_fotos(request):
