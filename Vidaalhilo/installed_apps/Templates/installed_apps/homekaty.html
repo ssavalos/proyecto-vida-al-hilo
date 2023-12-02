@@ -56,9 +56,13 @@
 <body>
     <h1>Crea tu outfit!</h1>
 
-    <li class="nav-item active">
-        <a class="nav-link" href="{% url 'publicar_foto' %}" id="publicar">Publicar foto<span class="sr-only"></span></a>
-    </li>
+    <div class="publicar-button">
+        <button onclick="window.location.href= '{% url 'publicar_foto' %}'" id="publicar">Publicar foto</button>  
+    </div>
+
+    <div class="verimagenes-button">
+        <button onclick="window.location.href= '{% url 'listar_fotos' %}'" id="verimagenes">Ver publicaciones</button>  
+    </div>
 
     {% for categoria, fotos in grouped_photos.items %}
         <div class="outfit-container">
