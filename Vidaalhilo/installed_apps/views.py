@@ -16,6 +16,7 @@ from .models import Foto
 from .models import Publicacion
 from itertools import groupby
 from django.db.models import Q
+from django.contrib.auth import logout
 
 def ver_perfil(request, usuario_id):
     usuario = User.objects.get(id=usuario_id)  # Recupera el usuario desde la base de datos
@@ -155,3 +156,8 @@ def eliminar_publicacion(request, publicacion_id):
         return redirect('listar_publicaciones')
 
     return render(request, 'installed_apps/eliminar_publicacion.html', {'publicacion': publicacion})
+
+def cerrar_sesion(request):
+    logout(request)
+    # Redirigir a la página de inicio o a otra página deseada
+    return redirect('installed_apps/login.html')
