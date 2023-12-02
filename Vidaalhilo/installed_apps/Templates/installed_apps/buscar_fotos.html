@@ -1,0 +1,16 @@
+{% extends "installed_apps/plantilla padre.html" %}
+{% block title %} Resultados de la búsqueda {% endblock %}
+{% block content %}
+
+<h1>Resultados de la búsqueda para "{{ query }}"</h1>
+
+{% for foto in fotos %}
+    <div>
+        <img src="{{ foto.imagen.url }}" alt="{{ foto.descripcion }}">
+        <p>{{ foto.descripcion }}</p>
+        <p>Categoría: {{ foto.get_categoria_display }}</p>
+        <p>Género: {{ foto.get_genero_display }}</p>
+    </div>
+{% endfor %}
+
+{% endblock %}

@@ -51,8 +51,8 @@
         </div>
       </div>
 
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar" id="barrita">
+      <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'buscar_fotos' %}">
+        <input class="form-control mr-sm-2" type="Buscar" name="q" placeholder="Buscar" aria-label="Buscar" id="barrita">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="buscar">
           <i class='bx bx-search-alt'></i>
         </button>

@@ -20,7 +20,8 @@ urlpatterns = [
     path('concatenar/', views.concatenar_fotos, name='concatenar_fotos'),
     path('publicar_foto/', views.publicar_foto, name='publicar_foto'),
     path('listar_fotos/', views.listar_fotos, name='listar_fotos'),
-    path('publicacion/<int:publicacion_id>/eliminar/', views.eliminar_publicacion, name='eliminar_publicacion')
+    path('publicacion/<int:publicacion_id>/eliminar/', views.eliminar_publicacion, name='eliminar_publicacion'),
+    path('buscar/', views.buscar_fotos, name='buscar_fotos')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

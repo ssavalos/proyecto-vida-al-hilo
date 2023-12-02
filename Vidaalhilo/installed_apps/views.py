@@ -15,6 +15,7 @@ from .form import FotoForm
 from .models import Foto
 from .models import Publicacion
 from itertools import groupby
+from django.db.models import Q
 
 def ver_perfil(request, usuario_id):
     usuario = User.objects.get(id=usuario_id)  # Recupera el usuario desde la base de datos
@@ -27,6 +28,20 @@ def Videos_Pagina(request):
     return render(request, "installed_apps/Videos.html")
 def Buscador(request):
     return render(request, "installed_apps/Buscador.html")
+
+
+#Buscador que si funciona
+def buscar_fotos(request):
+    if request.method == "GET":
+        query = request.GET.get("q")
+        fotos = Foto.objects.filter(descripcion__icontains=query)
+        return render(request, 'installed_apps/buscar_fotos.html', {'fotos': fotos, 'query': query})
+    else:
+        # Maneja otros métodos HTTP según sea necesario
+        return HttpResponse("Método no permitido")
+
+
+
 def Contacto(request):
     if request.method == "POST":
         subject = request.POST["asunto"]
