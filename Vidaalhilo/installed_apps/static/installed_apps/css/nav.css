@@ -22,11 +22,11 @@ body {
 }
 
 .navbar-left{
-    margin-left: -200px;
+    margin-left: -100px;
 }
 
 .navbar-right{
-    margin-right: -200px;
+    margin-right: -100px;
 }
 
 #navbarDropdown {

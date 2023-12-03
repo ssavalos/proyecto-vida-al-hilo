@@ -79,10 +79,10 @@ def registrarse(request):
         if form.is_valid():
             form.save()
             return redirect("/homekaty")
-        return render(request, "installed_apps/registrarse.html", {"form": form})
+        return render(request, "registration/register.html", {"form": form})
     else:
         form = RegisterForm()
-    return render(request, "installed_apps/registrarse.html", {"form": form})
+    return render(request, "registration/register.html", {"form": form})
 
 
 def homekaty(request):
