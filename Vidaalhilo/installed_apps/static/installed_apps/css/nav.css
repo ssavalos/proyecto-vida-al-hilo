@@ -18,14 +18,15 @@ body {
     align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
     padding: 0px 5px; /* Ajusta el espacio interno de la barra de navegación */
     margin-bottom: 10px;
+
 }
 
 .navbar-left{
-    margin-left: -100px;
+    margin-left: -200px;
 }
 
 .navbar-right{
-    margin-right: -100px;
+    margin-right: -200px;
 }
 
 #navbarDropdown {
@@ -78,6 +79,7 @@ body {
     background-position: center;
     background-size: cover;
     font-family: 'Voltaire', sans-serif;
+    text-align: center;
 }
 
 #inicio {
@@ -105,6 +107,7 @@ body {
 }
 
 .white {
+    margin-right: 5px;
     color: white;
     animation: pulse 3s infinite;
 }
