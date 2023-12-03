@@ -2,15 +2,94 @@
 {% block title %} Hombres {% endblock %}
 {% block content %}
 
-<h1>Fotos para Hombres</h1>
+<head>
+    <title>Publicaciones</title>
+    <style>
 
-{% for foto in fotos_hombres %}
-    <div>
-        <img src="{{ foto.imagen.url }}" alt="{{ foto.descripcion }}">
-        <p>{{ foto.descripcion }}</p>
-        <p>Categoría: {{ foto.get_categoria_display }}</p>
-        <p>Género: {{ foto.get_genero_display }}</p>
+    body {
+        background-image: url(../static/installed_apps/img/black-and-white-boutique-clothes-clothing-rack.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #titulo {
+        font-family: 'Raleway';
+        font-weight: 700;
+        background-color: rgba(102, 0, 102, 0.5); /* Fondo morado */
+        color: white; /* Letras blancas */
+        padding: 10px; /* Espaciado interno */
+        border-radius: 10px; /* Esquinas redondeadas */
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .publicar-button {
+        display: flex;
+        align-items: center;
+    }
+
+    .publicar-button button {
+        background-color: rgb(102, 0, 102);
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .publicaciones {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .publicacion {
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 10px;
+        text-align: center;
+        font-family: 'Raleway';
+        font-weight: 600;
+        background-color: white; /* Fondo blanco */
+        margin-bottom: 20px; /* Espaciado inferior */
+    }
+
+    #prenda {
+        color: rgb(102, 0, 102);
+        font-size: 25px;
+    }
+
+    .publicacion img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    </style>
+</head>
+<body>
+    <h2 id="titulo">
+        Prendas hombre
+        <div class="publicar-button">
+            <button onclick="window.location.href= '{% url 'publicar_foto' %}'" id="publicar">Publicar foto</button>  
+        </div>
+    </h2>
+
+    <div class="publicaciones">
+        {% for foto in fotos_hombres %}
+            <div class="publicacion">
+                <p id="prenda">{{ foto.descripcion }}</p>
+                <img src="{{ foto.imagen.url }}" alt="{{ foto.descripcion }}">
+                <p>Teléfono: {{ foto.telefono }}</p>
+                <p>Categoría: {{ foto.get_categoria_display }}</p>
+                <p>Género: {{ foto.get_genero_display }}</p>
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
+</body>
 
 {% endblock %}
+
+
+
