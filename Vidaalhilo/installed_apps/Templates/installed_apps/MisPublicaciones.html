@@ -17,27 +17,24 @@
 
     <style>
         body {
-            background-image: url(../static/installed_apps/img/black-and-white-boutique-clothes-clothing-rack.jpg);
+            background-image: url(../static/installed_apps/img/395565.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
         #titulo {
-            font-family: 'Raleway';
-            font-weight: 700;
-            background-color: rgba(102, 0, 102, 0.5);
-            color: white;
-            padding: 10px;
-            border-radius: 10px;
+            font-family: 'Lobster', sans-serif;
+            justify-content: space-between;
             margin-bottom: 20px;
             display: flex;
-            justify-content: space-between;
+            font-weight: 100;
         }
 
         .publicar-button {
             display: flex;
             align-items: center;
+            margin-right: 10px;
         }
 
         .publicar-button button {
@@ -56,31 +53,47 @@
         }
 
         .publicacion {
-            border: 1px solid #ccc;
+            border: 3px solid #000000;
             border-radius: 20px;
-            padding: 10px;
+            padding: 30px;
             text-align: center;
             font-family: 'Raleway';
             font-weight: 600;
-            background-color: white; /* Fondo blanco */
+            background: url(../static/installed_apps/img/blanco.jpg); /* Fondo blanco */
+            background-size: cover;
+            background-position: center;
             margin-bottom: 20px; /* Espaciado inferior */
         }
 
         #prenda {
-            color: rgb(102, 0, 102);
+            color: rgb(0, 0, 0);
             font-size: 25px;
         }
 
         .publicacion img {
             max-width: 100%;
             height: auto;
+            margin-bottom: 10px;
+        }
+        .titulo2{
+            margin-right: 1000px;
+            font-weight: 100;
+            background-color: rgba(102, 0, 102);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-top: 20px;
         }
 
     </style>
 </head>
 <body>
     <h2 id="titulo">
-        Mis Publicaciones
+        <div class="titulo2">Mis Publicaciones</div>
         <div class="publicar-button">
             <button onclick="window.location.href= '{% url 'publicar_foto' %}'" id="publicar">Publicar foto</button>
         </div>

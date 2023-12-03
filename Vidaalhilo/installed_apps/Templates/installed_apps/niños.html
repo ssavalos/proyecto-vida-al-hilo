@@ -1,33 +1,31 @@
 {% extends "installed_apps/plantilla padre.html" %}
 {% block title %} Niños {% endblock %}
 {% block content %}
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 <head>
     <title>Publicaciones</title>
     <style>
 
     body {
-        background-image: url(../static/installed_apps/img/black-and-white-boutique-clothes-clothing-rack.jpg);
+        background-image: url(../static/installed_apps/img/395565.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
 
     #titulo {
-        font-family: 'Raleway';
-        font-weight: 700;
-        background-color: rgba(102, 0, 102, 0.5); /* Fondo morado */
-        color: white; /* Letras blancas */
-        padding: 10px; /* Espaciado interno */
-        border-radius: 10px; /* Esquinas redondeadas */
+        font-family: 'Lobster', sans-serif;
+        justify-content: space-between;
         margin-bottom: 20px;
         display: flex;
-        justify-content: space-between;
     }
 
     .publicar-button {
         display: flex;
         align-items: center;
+        margin-right: 10px;
     }
 
     .publicar-button button {
@@ -65,12 +63,25 @@
         max-width: 100%;
         height: auto;
     }
+    .titulo2 {
+        margin-right: 1000px;
+        font-weight: 100;
+        background-color: rgba(102, 0, 102);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
 
     </style>
 </head>
 <body>
     <h2 id="titulo">
-        Prendas niño/a
+        <div class="titulo2">Prendas niño/a</div>
         <div class="publicar-button">
             <button onclick="window.location.href= '{% url 'publicar_foto' %}'" id="publicar">Publicar foto</button>  
         </div>
