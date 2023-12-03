@@ -21,11 +21,11 @@ body {
 }
 
 .navbar-left{
-    margin-left: -200px;
+    margin-left: -100px;
 }
 
 .navbar-right{
-    margin-right: -200px;
+    margin-right: -100px;
 }
 
 #navbarDropdown {
@@ -36,6 +36,21 @@ body {
 
 #navbarDropdown::after {
     display: none !important;
+}
+
+.dropdown-item {
+    color: rgb(102, 0, 102);
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(102, 0, 102, 0.2);
+}
+
+.dropdown-item.active {
+    background-color: rgba(102, 0, 102, 0.5);
+    color: white;
 }
 
 #barrita {

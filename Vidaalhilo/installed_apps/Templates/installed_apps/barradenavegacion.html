@@ -42,12 +42,12 @@
                 aria-haspopup="true" aria-expanded="false">
                 <i class='bx bx-menu'></i>
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'mostrar_fotos_mujeres' %}">Mujeres</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="opciones">
+                <a class="dropdown-item {% if request.resolver_match.url_name == 'mostrar_fotos_mujeres' %}active{% endif %}" href="{% url 'mostrar_fotos_mujeres' %}">Mujer</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'mostrar_fotos_hombres' %}">Hombres</a>
+                <a class="dropdown-item {% if request.resolver_match.url_name == 'mostrar_fotos_hombres' %}active{% endif %}" href="{% url 'mostrar_fotos_hombres' %}">Hombre</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'mostrar_fotos_ninos' %}">Niños</a>
+                <a class="dropdown-item {% if request.resolver_match.url_name == 'mostrar_fotos_ninos' %}active{% endif %}" href="{% url 'mostrar_fotos_ninos' %}">Niño/a</a>
               </div>
             </li>
           </ul>
