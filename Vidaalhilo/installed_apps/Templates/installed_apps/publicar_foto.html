@@ -2,20 +2,56 @@
 {% extends "installed_apps/plantilla padre.html" %}
 {% block title %} publicar {% endblock %}
 {% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
+<style>
+    body {
+        background: url(../static/installed_apps/img/395565.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    #titulo{
+        font-size: 50px;
+        color: white;
+        margin-left: 10px;
+        font-family: 'Lobster', sans-serif;
+    }
+    .mensaje{
+        color:white;
+        margin-left: 10px;
+    }
+    #boton{
+        background-color: rgb(113, 76, 113); 
+        color: white; 
+        padding: 15px 20px; /* Ajusta el tamaño del botón */
+        border: none;
+        border-radius: 25px; /* Bordes redondos */
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 15px; /* Ajusta el tamaño de la fuente */
+        font-family: 'Raleway';
+        font-weight: 600;
+    }
+
+
+
+
+</style>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Publicar Foto</title>
-</head>
 <body>
-    <h1>Publicar Foto</h1>
-
-    <form method="post" action="{% url 'publicar_foto' %}" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Publicar</button>
-    </form>
+    <div id="titulo">
+        <p>Publicar Foto</p>
+    </div>
+    <div class="mensaje">
+        <form method="post" action="{% url 'publicar_foto' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" id="boton">Publicar</button>
+        </form>
+    </div>
 
     <a href="{% url 'listar_fotos' %}">Volver a la lista de fotos</a>
 </body>

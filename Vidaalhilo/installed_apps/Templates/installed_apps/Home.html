@@ -9,9 +9,11 @@
 
      <!-- Fonts -->
     
-     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
-     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-     
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{% static 'installed_apps/css/gestion.css' %}" rel="stylesheet">
@@ -19,10 +21,9 @@
 
 <body>
 
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-      
-        <span class="site-heading-lower">Vida al Hilo</span>
-      </h1>
+  <div class="titulo">
+    <p>Vida al Hilo</p>
+  </div>
 
 
  <!-- Navbar -->
@@ -41,7 +42,7 @@
             <a class="nav-link text-uppercase text-expanded" href="contacto">Contacto</a>
           </li>
           <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="accounts/login">Login</a>
+            <a class="nav-link text-uppercase text-expanded" href="accounts/login">Ingresa</a>
           </li>
          
         </ul>
@@ -54,7 +55,7 @@
    <section class="page-section clearfix">
     <div class="container">
       <div class="intro">
-        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'installed_apps/img/principal.jpg' %}" alt="">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'installed_apps/img/ropa.jpg' %}" alt="">
         <div class="intro-text left-0 text-center bg-faded p-5 rounded">
           <h2 class="section-heading mb-4" >
             <span class="section-heading-upper"></span>
@@ -78,45 +79,16 @@
             <div class="cta-inner text-center rounded">
               <h2 class="section-heading mb-4">
                 <span class="section-heading-upper">Compromiso total</span>
-                <span class="section-heading-lower">Con puntos de encuentro</span>
+                <span class="section-heading-lower">Con creador de conjuntos</span>
               </h2>
               <p class="mb-0">Garantizamos una muy buena experiencia en nuestra página web, donde puedes echar a volar la imaginación</p>
             </div>
           </div>
         </div>
+        <p class="m-0 mbt1">&copy; Vida al hilo 2023</p>
       </div>
     </section>
 
-
-    <!-- Footer -->
-    <footer class="footer text-faded text-center py-5">
-      <div class="container">
-        <p class="m-0">
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	    </p>
-        <p class="m-0 mbt">
-        	
-		</p>
-        <p class="m-0 mbt1">&copy; Vida al hilo 2023</p>
-      </div>
-	</footer>
 
     <!-- Bootstrap -->
     <script src="{% static 'installed_apps/vendor/jquery/jquery.min.js' %}"></script>

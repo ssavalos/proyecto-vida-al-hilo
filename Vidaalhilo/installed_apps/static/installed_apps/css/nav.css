@@ -12,20 +12,21 @@ body {
 }
 
 #navbar {
-    background: rgb(102, 0, 102);
+    background:rgb(71, 7, 71);
     display: flex;
     justify-content: space-between; /* Distribuye los elementos horizontalmente */
     align-items: center; /* Centra verticalmente los elementos en la barra de navegación */
     padding: 0px 5px; /* Ajusta el espacio interno de la barra de navegación */
     margin-bottom: 10px;
+
 }
 
 .navbar-left{
-    margin-left: -200px;
+    margin-left: -100px;
 }
 
 .navbar-right{
-    margin-right: -200px;
+    margin-right: -100px;
 }
 
 #navbarDropdown {
@@ -36,6 +37,23 @@ body {
 
 #navbarDropdown::after {
     display: none !important;
+}
+
+.dropdown-item {
+    color: rgb(71, 7, 71);
+    background-color:rgb(232, 226, 226);
+    transition: background-color 0.3s;
+    font-weight: 600;
+    border: 3px solid black;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(190, 80, 190);
+}
+
+.dropdown-item.active {
+    background-color: rgba(71, 7, 71);
+    color: white;
 }
 
 #barrita {
@@ -63,6 +81,7 @@ body {
     background-position: center;
     background-size: cover;
     font-family: 'Voltaire', sans-serif;
+    text-align: center;
 }
 
 #inicio {
@@ -90,6 +109,7 @@ body {
 }
 
 .white {
+    margin-right: 5px;
     color: white;
     animation: pulse 3s infinite;
 }
